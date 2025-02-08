@@ -15,6 +15,7 @@ So the thought is instead of that weather widget thing, it would show what youre
 ![image](https://github.com/user-attachments/assets/22247311-021d-4bd5-81a6-2a1f69767e00)
 
 # School Timetable Widget 
-A widget that either shows the current class or next class on your timetable  
+A widget that either shows the current class or next class on your timetable, if you couldnt tell, once again big inspiration taken from the windows taskbar widget. Honestly kind of works as the other half to the widget i created above just in a different context.
 Uses my friends Compass Education API that i updated to work after compass' migration to Cloud flare https://github.com/Jake4353/Compasspy-Cloudflare
 ![Screenshot 2025-02-08 214942](https://github.com/user-attachments/assets/bfd3dd01-b1cb-4251-8653-074f7484efac)
+![Screenshot 2025-02-08 214551](https://github.com/user-attachments/assets/4bd5c42d-071d-4fa2-ad61-1c5b23fcff83)
