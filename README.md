@@ -13,3 +13,8 @@ Its kind of terrible
 This is kind of what i intended to replace this stupid widget, but it has a long way to go.  
 So the thought is instead of that weather widget thing, it would show what youre currently listening to, and on click or hover would open the flyout as shown above.
 ![image](https://github.com/user-attachments/assets/22247311-021d-4bd5-81a6-2a1f69767e00)
+
+# School Timetable Widget 
+A widget that either shows the current class or next class on your timetable  
+Uses my friends Compass Education API that i updated to work after compass' migration to Cloud flare https://github.com/Jake4353/Compasspy-Cloudflare
+![Screenshot 2025-02-08 214942](https://github.com/user-attachments/assets/bfd3dd01-b1cb-4251-8653-074f7484efac)
