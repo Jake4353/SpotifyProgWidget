@@ -8,7 +8,8 @@ Its kind of terrible
 - uses unnecessary packages
 - probably poorly optimised idk i made it when i was 14 dont judge 
 
-# Control
+# Spotify Control Widget
 ![Screenshot 2025-02-07 175929](https://github.com/user-attachments/assets/e95db21f-7ccf-4148-abf1-8a8d4cc054b8)![Screenshot 2025-02-06 221044](https://github.com/user-attachments/assets/1f810bb3-4209-4680-9e7b-9877ec442796)  
-This is kind of what i intended to replace this stupid widget, but it has a long way to go   
+This is kind of what i intended to replace this stupid widget, but it has a long way to go.  
+So the thought is instead of that weather widget thing, it would show what youre currently listening to, and on click or hover would open the flyout as shown above.
 ![image](https://github.com/user-attachments/assets/22247311-021d-4bd5-81a6-2a1f69767e00)
