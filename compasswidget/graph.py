@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import QApplication, QWidget
 from PyQt6.QtGui import QPainter, QPen, QColor, QFont
 from PyQt6.QtCore import Qt, QRectF
 from win32mica import ApplyMica, MicaTheme, MicaStyle
-
+import datetime
 class Event:
     def __init__(self, name, start_hour, end_hour, color=QColor(50, 100, 255, 150), border_color=QColor(0, 0, 0), secondary_text=""):
         self.name = name
@@ -48,7 +48,7 @@ class TimelineGraph(QWidget):
         # Assign columns dynamically
         assigned_columns = {}
         for time, active_events in time_slots.items():
-            available_columns = set(range(max_columns))  # Track used columns
+            available_columns = set(range(max_columns))
 
             for ev in active_events:
                 if ev not in assigned_columns:
@@ -58,7 +58,6 @@ class TimelineGraph(QWidget):
                 else:
                     ev.column = assigned_columns[ev]
 
-        # Set total columns for proper spacing
         for ev in self.events:
             ev.total_columns = max_columns
 
@@ -68,7 +67,6 @@ class TimelineGraph(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
 
-        # Define colors and styles
         bg_color = QColor(255,255,255,0)
         grid_color = QColor(150, 150, 150)
         text_color = QColor(250, 250, 250)
@@ -79,7 +77,7 @@ class TimelineGraph(QWidget):
         timeline_top = margin
         timeline_height = self.height() - 2 * margin
         timeline_width = self.width() - 2 * margin
-        hour_step = timeline_height / 9  # 8AM-8PM range
+        hour_step = timeline_height / 9
 
         pen = QPen(grid_color)
         pen.setWidth(1)
@@ -103,12 +101,11 @@ class TimelineGraph(QWidget):
                 painter.drawLine(margin, half_y, self.width() - margin, half_y)
                 painter.setPen(grid_color)
 
-        # Draw events
-        v_padding = 5
+        v_padding = 0
         for ev in self.events:
             y_start = int(timeline_top + (ev.start_hour - 8) * hour_step) + v_padding
             y_end = int(timeline_top + (ev.end_hour - 8) * hour_step) - v_padding
-            event_height = max(10, y_end - y_start)  # Ensure a minimum height
+            event_height = max(11, y_end - y_start) 
 
             # Adjust width and spacing for overlapping events
             column_width = (timeline_width - 10) / ev.total_columns
@@ -118,9 +115,8 @@ class TimelineGraph(QWidget):
             # Fill event rectangle
             painter.fillRect(QRectF(x_start, y_start, event_width, event_height), ev.color)
             
-            # Draw event border
             border_pen = QPen(ev.border_color)
-            border_pen.setWidth(2)
+            border_pen.setWidth(1)
             painter.setPen(border_pen)
             painter.drawRect(QRectF(x_start, y_start, event_width, event_height))
             
